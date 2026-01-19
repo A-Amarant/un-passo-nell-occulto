@@ -47,3 +47,45 @@
 
 </body>
 </html>
+/* === MENU A VETRO APPANNATO === */
+
+.site-nav {
+  margin-top: 1.5rem;
+  opacity: 0.6;
+}
+
+/* parola dietro il vetro */
+.fog-link {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.7rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  filter: blur(1.6px);
+  transition: filter 0.8s ease, color 0.8s ease;
+}
+
+/* strato di vetro */
+.fog-link::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 2px;
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+
+/* attraversamento */
+.fog-link:hover {
+  filter: blur(0);
+  color: #ffffff;
+}
+
+.fog-link:hover::before {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+}
