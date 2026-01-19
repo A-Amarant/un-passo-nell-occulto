@@ -28,24 +28,6 @@ body {
 }
 
 /* === NEBBIA / FUMO DI SFONDO === */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      rgba(120, 120, 120, 0.07),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(180, 180, 180, 0.04),
-      transparent 65%
-    );
-  pointer-events: none;
-  z-index: -1;
-}
 
 /* profondità lontana */
 body::after {
