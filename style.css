@@ -1,0 +1,101 @@
+/*
+  Progetto Chimera – Atmosfera tetro-onirica
+  Silenziosa, notturna, simbolica
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400&display=swap');
+
+:root {
+  --bg-main: #0d0f11;
+  --bg-secondary: #14171a;
+  --text-main: #d6d6d6;
+  --text-muted: #9a9a9a;
+  --accent: #6f7a6a; /* richiamo naturale, quasi muschio */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.site-header {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+}
+
+.site-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.post {
+  background-color: var(--bg-secondary);
+  padding: 2.5rem 2rem;
+  border-radius: 6px;
+}
+
+.post h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.post p {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Atmosfera onirica sottile */
+.post {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .post {
+    padding: 2rem 1.5rem;
+  }
+}
