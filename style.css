@@ -26,6 +26,12 @@ body {
   font-weight: 300;
   line-height: 1.7;
 }
+{
+  margin: 0;
+  font-family: serif;
+  background-color: #0b0b0b;
+  color: #e0e0e0;
+}
 
 .site-header {
   text-align: center;
