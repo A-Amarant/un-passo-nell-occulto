@@ -26,6 +26,45 @@ body {
   font-weight: 300;
   line-height: 1.7;
 }
+/* === NEBBIA / FUMO D'INCENSO VISIBILE === */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at left center,
+      rgba(200, 200, 200, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at right center,
+      rgba(200, 200, 200, 0.10),
+      transparent 65%
+    );
+  pointer-events: none;
+  z-index: 0;
+  animation: smokeDrift 90s ease-in-out infinite alternate;
+}
+
+/* movimento lento e laterale */
+@keyframes smokeDrift {
+  0% {
+    transform: translateX(-4%) translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(0%) translateY(-1%);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(4%) translateY(1%);
+    opacity: 0.65;
+  }
+}
 
 /* === NEBBIA / FUMO DI SFONDO === */
 
