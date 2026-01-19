@@ -26,12 +26,8 @@ body {
   font-weight: 300;
   line-height: 1.7;
 }
-{
-  margin: 0;
-  font-family: serif;
-  background-color: #0b0b0b;
-  color: #e0e0e0;
-}
+
+/* === NEBBIA / FUMO DI SFONDO === */
 body::before {
   content: "";
   position: fixed;
@@ -39,18 +35,34 @@ body::before {
   background:
     radial-gradient(
       circle at 30% 20%,
-      rgba(120, 120, 120, 0.08),
+      rgba(120, 120, 120, 0.07),
       transparent 60%
     ),
     radial-gradient(
       circle at 70% 60%,
-      rgba(180, 180, 180, 0.05),
+      rgba(180, 180, 180, 0.04),
       transparent 65%
     );
   pointer-events: none;
   z-index: -1;
 }
 
+/* profondità lontana */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0.025),
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* === HEADER === */
 .site-header {
   text-align: center;
   padding: 4rem 1.5rem 3rem;
@@ -71,6 +83,7 @@ body::before {
   text-transform: uppercase;
 }
 
+/* === CONTENUTO === */
 .content {
   max-width: 720px;
   margin: 0 auto;
@@ -81,6 +94,7 @@ body::before {
   background-color: var(--bg-secondary);
   padding: 2.5rem 2rem;
   border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
 .post h2 {
@@ -101,6 +115,7 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
+/* === FOOTER === */
 .site-footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -108,29 +123,12 @@ body::before {
   color: var(--text-muted);
 }
 
-/* Atmosfera onirica sottile */
-.post {
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .site-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .post {
-    padding: 2rem 1.5rem;
-  }
-}
 /* === MENU A VETRO APPANNATO === */
-
 .site-nav {
   margin-top: 1.5rem;
   opacity: 0.6;
 }
 
-/* parola dietro il vetro */
 .fog-link {
   position: relative;
   display: inline-block;
@@ -143,7 +141,6 @@ body::before {
   transition: filter 0.8s ease, color 0.8s ease;
 }
 
-/* strato di vetro */
 .fog-link::before {
   content: "";
   position: absolute;
@@ -155,7 +152,6 @@ body::before {
   pointer-events: none;
 }
 
-/* attraversamento */
 .fog-link:hover {
   filter: blur(0);
   color: #ffffff;
@@ -165,10 +161,10 @@ body::before {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(1px);
 }
-/* === LINK INSTAGRAM (SEGNALE) === */
 
+/* === LINK INSTAGRAM (SEGNALE) === */
 .ig-link {
-  color: #8b1e1e; /* rosso scuro */
+  color: #8b1e1e;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -180,7 +176,6 @@ body::before {
   opacity: 0.7;
 }
 
-/* al passaggio */
 .ig-link:hover {
   color: #c0392b;
   text-shadow: 0 0 6px rgba(192, 57, 43, 0.4);
@@ -188,4 +183,15 @@ body::before {
 
 .ig-link:hover .ig-icon {
   opacity: 1;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .site-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .post {
+    padding: 2rem 1.5rem;
+  }
 }
