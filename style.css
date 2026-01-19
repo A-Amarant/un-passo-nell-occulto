@@ -10,7 +10,7 @@
   --bg-secondary: #14171a;
   --text-main: #d6d6d6;
   --text-muted: #9a9a9a;
-  --accent: #6f7a6a; /* richiamo naturale, quasi muschio */
+  --accent: #6f7a6a;
 }
 
 * {
@@ -19,244 +19,34 @@
   box-sizing: border-box;
 }
 
+/* === BODY === */
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   line-height: 1.7;
+  overflow-x: hidden;
 }
-/* === NEBBIA / FUMO D'INCENSO VISIBILE === */
 
+/* === FUMO D'INCENSO (STRATO UNICO, VISIBILE, ANIMATO) === */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 0;
+
   background:
     radial-gradient(
       ellipse at left center,
-      rgba(200, 200, 200, 0.12),
+      rgba(200, 200, 200, 0.18),
       transparent 60%
     ),
     radial-gradient(
       ellipse at right center,
-      rgba(200, 200, 200, 0.10),
+      rgba(200, 200, 200, 0.14),
       transparent 65%
     );
-  pointer-events: none;
-  z-index: 0;
-  animation: smokeDrift 90s ease-in-out infinite alternate;
-}
 
-/* movimento lento e laterale */
-@keyframes smokeDrift {
-  0% {
-    transform: translateX(-4%) translateY(0);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: translateX(0%) translateY(-1%);
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: translateX(4%) translateY(1%);
-    opacity: 0.65;
-  }
-}
-
-/* === NEBBIA / FUMO DI SFONDO === */
-
-/* profondità lontana */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(255, 255, 255, 0.025),
-      transparent 70%
-    );
-  pointer-events: none;
-  z-index: -2;
-}
-
-/* === HEADER === */
-.site-header {
-  text-align: center;
-  padding: 4rem 1.5rem 3rem;
-}
-
-.site-header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
-
-.subtitle {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-/* === CONTENUTO === */
-.content {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
-
-.post {
-  background-color: var(--bg-secondary);
-  padding: 2.5rem 2rem;
-  border-radius: 6px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-}
-
-.post h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.date {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-  letter-spacing: 0.1em;
-}
-
-.post p {
-  margin-bottom: 1.5rem;
-}
-
-/* === FOOTER === */
-.site-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-/* === MENU A VETRO APPANNATO === */
-.site-nav {
-  margin-top: 1.5rem;
-  opacity: 0.6;
-}
-
-.fog-link {
-  position: relative;
-  display: inline-block;
-  margin: 0 0.7rem;
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  filter: blur(1.6px);
-  transition: filter 0.8s ease, color 0.8s ease;
-}
-
-.fog-link::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  border-radius: 2px;
-  transition: all 0.8s ease;
-  pointer-events: none;
-}
-
-.fog-link:hover {
-  filter: blur(0);
-  color: #ffffff;
-}
-
-.fog-link:hover::before {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(1px);
-}
-
-/* === LINK INSTAGRAM (SEGNALE) === */
-.ig-link {
-  color: #8b1e1e;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: color 0.6s ease, text-shadow 0.6s ease;
-}
-
-.ig-icon {
-  margin-right: 0.3rem;
-  opacity: 0.7;
-}
-
-.ig-link:hover {
-  color: #c0392b;
-  text-shadow: 0 0 6px rgba(192, 57, 43, 0.4);
-}
-
-.ig-link:hover .ig-icon {
-  opacity: 1;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 600px) {
-  .site-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .post {
-    padding: 2rem 1.5rem;
-  }
-}
-/* === FUMO D'INCENSO LATERALE === */
-
-body::before,
-body::after {
-  animation: smokeDrift 120s ease-in-out infinite alternate;
-}
-
-/* strato sinistro */
-body::before {
-  background:
-    radial-gradient(
-      ellipse at left center,
-      rgba(180, 180, 180, 0.06),
-      transparent 65%
-    );
-}
-
-/* strato destro */
-body::after {
-  background:
-    radial-gradient(
-      ellipse at right center,
-      rgba(200, 200, 200, 0.04),
-      transparent 70%
-    );
-}
-
-/* movimento lentissimo */
-@keyframes smokeDrift {
-  0% {
-    transform: translateX(-2%) translateY(0);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: translateX(0) translateY(-1%);
-    opacity: 0.85;
-  }
-
-  100% {
-    transform: translateX(2%) translateY(1%);
-    opacity: 0.75;
-  }
-}
+  animation: sm
