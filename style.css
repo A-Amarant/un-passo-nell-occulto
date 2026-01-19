@@ -141,3 +141,27 @@ body {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(1px);
 }
+/* === LINK INSTAGRAM (SEGNALE) === */
+
+.ig-link {
+  color: #8b1e1e; /* rosso scuro */
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+.ig-icon {
+  margin-right: 0.3rem;
+  opacity: 0.7;
+}
+
+/* al passaggio */
+.ig-link:hover {
+  color: #c0392b;
+  text-shadow: 0 0 6px rgba(192, 57, 43, 0.4);
+}
+
+.ig-link:hover .ig-icon {
+  opacity: 1;
+}
