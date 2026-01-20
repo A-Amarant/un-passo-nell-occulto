@@ -285,23 +285,3 @@ body::after {
     opacity: 0.28;
   }
 }
-/* === APPARIZIONE SPETTRALE DEL TITOLO === */
-
-@keyframes spectralAppear {
-  0% {
-    opacity: 0;
-    filter: blur(6px);
-    transform: translateY(6px);
-  }
-
-  60% {
-    opacity: 0.6;
-    filter: blur(2px);
-  }
-
-  100% {
-    opacity: 0.94;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
