@@ -253,3 +253,31 @@ body::after {
     transform: translateX(6%) translateY(2%);
   }
 }
+/* === PRESENZA SONORA MUTA – RESPIRO DEL MENU === */
+
+.fog-link::before {
+  animation: glassBreath 14s ease-in-out infinite;
+}
+
+/* quando l'utente passa sopra, il respiro si ferma */
+.fog-link:hover::before {
+  animation-play-state: paused;
+}
+
+/* micro pulsazione impercettibile */
+@keyframes glassBreath {
+  0% {
+    backdrop-filter: blur(6px);
+    opacity: 0.28;
+  }
+
+  50% {
+    backdrop-filter: blur(7.5px);
+    opacity: 0.34;
+  }
+
+  100% {
+    backdrop-filter: blur(6px);
+    opacity: 0.28;
+  }
+}
