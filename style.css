@@ -207,39 +207,48 @@ body::after {
     padding: 2rem 1.5rem;
   }
 }
-/* === FUMO D'INCENSO DI SFONDO === */
+/* === FUMO D'INCENSO LATERALE (VISIBILE) === */
 
 .incense-smoke {
   position: fixed;
-  inset: -20%;
+  top: -20%;
+  left: -30%;
+  width: 160%;
+  height: 140%;
+
   pointer-events: none;
   z-index: -1;
 
   background:
     radial-gradient(
-      ellipse at 20% 60%,
-      rgba(200, 200, 200, 0.08),
-      transparent 60%
+      ellipse at left center,
+      rgba(220, 220, 220, 0.14),
+      transparent 55%
     ),
     radial-gradient(
-      ellipse at 80% 40%,
-      rgba(200, 200, 200, 0.06),
-      transparent 65%
+      ellipse at right center,
+      rgba(220, 220, 220, 0.10),
+      transparent 60%
     );
 
-  filter: blur(18px);
-  opacity: 0.6;
+  filter: blur(22px);
+  opacity: 0.75;
 
-  animation: incenseDrift 120s ease-in-out infinite alternate;
+  animation: incenseDrift 90s linear infinite alternate;
 }
 
 @keyframes incenseDrift {
   0% {
-    transform: translateX(-6%) translateY(0);
+    transform: translateX(-4%) translateY(0%);
   }
   50% {
     transform: translateX(0%) translateY(-2%);
   }
+  100% {
+    transform: translateX(4%) translateY(2%);
+  }
+}
+
   100% {
     transform: translateX(6%) translateY(2%);
   }
