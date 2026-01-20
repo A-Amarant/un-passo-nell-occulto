@@ -70,19 +70,21 @@ body::after {
 
 .site-header h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.3rem;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+  font-size: 3.2rem;
+  font-weight: 500;
 
-  color: #dcdcdc;
+  font-style: italic; /* ← QUESTA È LA CHIAVE */
+
+  letter-spacing: 0.08em;
+  text-transform: none;
+
+  color: #d2d2d2;
 
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.08),
-    0 -1px 0 rgba(0, 0, 0, 0.6),
-    0 0 10px rgba(140, 140, 140, 0.15);
+    0 0 6px rgba(120, 120, 120, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.9);
 
-  opacity: 0.9;
+  opacity: 0.94;
 }
 
 .subtitle {
