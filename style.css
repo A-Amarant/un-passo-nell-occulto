@@ -87,7 +87,7 @@ body::after {
   filter: blur(6px);
   transform: translateY(6px);
 
-  animation: spectralAppear 3.2s ease-out forwards;
+  animation: spectralAppear 1.2s ease-out forwards;
   animation-delay: 0.8s;
 }
 
